@@ -1,42 +1,38 @@
 {
     "mergeEvent": {
       "productCode": "SM_CLUB_WC_25",
-      "productTypeKey": "MARBLE_TESTING",
+      "productTypeKey": "MARBLE",
       "_id": null,
       "__v": null,
       "streamServer": "$STREAM_SERVER",
       "videoExtension": "mp4"
-
     },
-    "mergeEventDetails": [
-
-    ],
+    "mergeEventDetails": [],
     "patches": [
       {
         "op": "jsonata",
         "path": "/eventDetails/0/playlist",
-        "expression": "$exists(eventDetails[0].playlist) and $trim(eventDetails[0].playlist) != \"\" ? \"RESULT REDACTED\" : \"\""
+        "expression": "$exists(eventDetails[0].playlist) and $trim(eventDetails[0].playlist) != \"\" ? streamServer & '/' & eventDetails[0].playlist & '.' & videoExtension : \"\""
       },
       {
         "op": "jsonata",
         "path": "/eventDetails/0/goalInfo",
-        "expression": "$exists(eventDetails[0].goalInfo) and $trim(eventDetails[0].goalInfo) != \"\" ? \"RESULT REDACTED\" : \"\""
+        "expression": "$exists(eventDetails[0].goalInfo) and $trim(eventDetails[0].goalInfo) != \"\" ? streamServer & '/' & eventDetails[0].goalInfo & '.json' : \"\""
       },
       {
         "op": "jsonata",
         "path": "/eventDetails/1/playlist",
-        "expression": "$exists(eventDetails[1].playlist) and $trim(eventDetails[1].playlist) != \"\" ? \"RESULT REDACTED\" : \"\""
+        "expression": "$exists(eventDetails[1].playlist) and $trim(eventDetails[1].playlist) != \"\" ? streamServer & '/' & eventDetails[1].playlist & '.' & videoExtension : \"\""
       },
       {
         "op": "jsonata",
         "path": "/eventDetails/1/goalInfo",
-        "expression": "$exists(eventDetails[1].goalInfo) and $trim(eventDetails[1].goalInfo) != \"\" ? \"RESULT REDACTED\" : \"\""
+        "expression": "$exists(eventDetails[1].goalInfo) and $trim(eventDetails[1].goalInfo) != \"\" ? streamServer & '/' & eventDetails[1].goalInfo & '.json' : \"\""
       },
       {
         "op": "remove",
         "path": "/streamServer"
       },
-      
       {
         "op": "remove",
         "path": "/videoExtension"
@@ -56,17 +52,17 @@
       {
         "op": "jsonata",
         "path": "/eventDetails/0/result",
-        "expression": "$exists(eventDetails[0].result) and $exists(eventDetails[0].result.finalScore) ? \"RESULT REDACTED\" : \"\""
+        "expression": "$exists(eventDetails[0].result) and $exists(eventDetails[0].result.finalScore) ? eventDetails[0].result.finalScore : \"\""
       },
       {
         "op": "jsonata",
         "path": "/eventDetails/1/result",
-        "expression": "$exists(eventDetails[1].result) and $exists(eventDetails[1].result.finalScore) ? \"RESULT REDACTED\" : \"\""
+        "expression": "$exists(eventDetails[1].result) and $exists(eventDetails[1].result.finalScore) ? eventDetails[1].result.finalScore : \"\""
       }
     ],
     "markets": [
-      { 
-        "id": "684957076f3aab5c92f20f8f",
+      {
+        "name": "MARKET_HANDICAP",
         "merge": {
           "marketID": 1,
           "marketNameKey": "MARKET_HANDICAP",
@@ -78,21 +74,19 @@
             "column": 1,
             "selectionOrder": 1,
             "selectionNameLongKey": "HOME_WIN",
-            "name": "ft_hdp_home",
-            "settlementStatus": "REDACTED"
+            "name": "ft_hdp_home"
           },
           {
             "selectionID": 2,
             "column": 2,
             "selectionOrder": 1,
             "selectionNameLongKey": "AWAY_WIN",
-            "name": "ft_hdp_away",
-            "settlementStatus": "REDACTED"
+            "name": "ft_hdp_away"
           }
         ]
       },
       {
-        "id": "684957076f3aab5c92f20f90",
+        "name": "MARKET_1H_HANDICAP",
         "merge": {
           "marketID": 2,
           "marketNameKey": "MARKET_1H_HANDICAP",
@@ -104,21 +98,19 @@
             "column": 1,
             "selectionOrder": 1,
             "selectionNameLongKey": "HOME_WIN",
-            "name": "h1_hdp_home",
-             "settlementStatus": "REDACTED"
+            "name": "h1_hdp_home"
           },
           {
             "selectionID": 4,
             "column": 2,
             "selectionOrder": 1,
             "selectionNameLongKey": "AWAY_WIN",
-            "name": "h1_hdp_away",
-            "settlementStatus": "REDACTED"
+            "name": "h1_hdp_away"
           }
         ]
       },
       {
-        "id": "684957076f3aab5c92f20f91",
+        "name": "MARKET_OVER_UNDER",
         "merge": {
           "marketID": 3,
           "marketNameKey": "MARKET_OVER_UNDER",
@@ -130,21 +122,19 @@
             "column": 1,
             "selectionOrder": 1,
             "selectionNameLongKey": "OVER",
-            "name": "ft_ou_over",
-            "settlementStatus": "REDACTED"
+            "name": "ft_ou_over"
           },
           {
             "selectionID": 6,
             "column": 2,
             "selectionOrder": 1,
             "selectionNameLongKey": "UNDER",
-            "name": "ft_ou_under",
-            "settlementStatus": "REDACTED"
+            "name": "ft_ou_under"
           }
         ]
       },
       {
-        "id": "684957076f3aab5c92f20f92",
+        "name": "MARKET_1H_OVER_UNDER",
         "merge": {
           "marketID": 4,
           "marketNameKey": "MARKET_1H_OVER_UNDER",
@@ -156,21 +146,19 @@
             "column": 1,
             "selectionOrder": 1,
             "selectionNameLongKey": "OVER",
-            "name": "h1_ou_over",
-            "settlementStatus": "REDACTED"
+            "name": "h1_ou_over"
           },
           {
             "selectionID": 8,
             "column": 2,
             "selectionOrder": 1,
             "selectionNameLongKey": "UNDER",
-            "name": "h1_ou_under",
-            "settlementStatus": "REDACTED"
+            "name": "h1_ou_under"
           }
         ]
       },
       {
-        "id": "684957076f3aab5c92f20f93",
+        "name": "MARKET_EVEN_ODD",
         "merge": {
           "marketID": 5,
           "marketNameKey": "MARKET_EVEN_ODD",
@@ -182,21 +170,19 @@
             "column": 1,
             "selectionOrder": 1,
             "selectionNameLongKey": "EVEN",
-            "name": "ft_oe_even",
-            "settlementStatus": "REDACTED"
+            "name": "ft_oe_even"
           },
           {
             "selectionID": 10,
             "column": 2,
             "selectionOrder": 1,
             "selectionNameLongKey": "ODD",
-            "name": "ft_oe_odd",
-            "settlementStatus": "REDACTED"
+            "name": "ft_oe_odd"
           }
         ]
       },
       {
-        "id": "684957076f3aab5c92f20f94",
+        "name": "MARKET_1H_EVEN_ODD",
         "merge": {
           "marketID": 6,
           "marketNameKey": "MARKET_1H_EVEN_ODD",
@@ -208,21 +194,19 @@
             "column": 1,
             "selectionOrder": 1,
             "selectionNameLongKey": "EVEN",
-            "name": "h1_oe_even",
-            "settlementStatus": "REDACTED"
+            "name": "h1_oe_even"
           },
           {
             "selectionID": 12,
             "column": 2,
             "selectionOrder": 1,
             "selectionNameLongKey": "ODD",
-            "name": "h1_oe_odd",
-            "settlementStatus": "REDACTED"
+            "name": "h1_oe_odd"
           }
         ]
       },
       {
-        "id": "684957076f3aab5c92f20f95",
+        "name": "MARKET_1X2",
         "merge": {
           "marketID": 7,
           "marketNameKey": "MARKET_1X2",
@@ -234,29 +218,26 @@
             "column": 1,
             "selectionOrder": 1,
             "selectionNameLongKey": "HOME",
-            "name": "ft_1x2_home",
-            "settlementStatus": "REDACTED"
+            "name": "ft_1x2_home"
           },
           {
             "selectionID": 14,
             "column": 2,
             "selectionOrder": 1,
             "selectionNameLongKey": "AWAY",
-            "name": "ft_1x2_away",
-            "settlementStatus": "REDACTED"
+            "name": "ft_1x2_away"
           },
           {
             "selectionID": 15,
             "column": 3,
             "selectionOrder": 1,
             "selectionNameLongKey": "TIE",
-            "name": "ft_1x2_draw",
-            "settlementStatus": "REDACTED"
+            "name": "ft_1x2_draw"
           }
         ]
       },
       {
-        "id": "684957076f3aab5c92f20f96",
+        "name": "MARKET_1H_1X2",
         "merge": {
           "marketID": 8,
           "marketNameKey": "MARKET_1H_1X2",
@@ -268,24 +249,21 @@
             "column": 1,
             "selectionOrder": 1,
             "selectionNameLongKey": "HOME",
-            "name": "h1_1x2_home",
-            "settlementStatus": "REDACTED"
+            "name": "h1_1x2_home"
           },
           {
             "selectionID": 17,
             "column": 2,
             "selectionOrder": 1,
             "selectionNameLongKey": "AWAY",
-            "name": "h1_1x2_away",
-            "settlementStatus": "REDACTED"
+            "name": "h1_1x2_away"
           },
           {
             "selectionID": 18,
             "column": 3,
             "selectionOrder": 1,
             "selectionNameLongKey": "TIE",
-            "name": "h1_1x2_draw",
-            "settlementStatus": "REDACTED"
+            "name": "h1_1x2_draw"
           }
         ]
       }
