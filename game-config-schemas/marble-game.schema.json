@@ -4,10 +4,13 @@
     "type": "object",
     "properties": {
         "enabled": {
+            "title": "Enabled",
             "type": "boolean",
-            "description": "Whether the game is enabled"
+            "description": "Whether the game is enabled",
+            "default": false
         },
         "teams": {
+            "title": "Teams",
             "type": "array",
             "description": "List of team names",
             "items": {
@@ -15,6 +18,7 @@
             }
         },
         "numberOfVideos": {
+            "title": "Number of videos",
             "type": "object",
             "description": "Number of videos for each result sequence",
             "additionalProperties": {
@@ -22,24 +26,42 @@
             }
         },
         "matches": {
-            "type": "object",
-            "properties": {
-                "homeTeam": {
-                    "type": "string",
-                    "description": "Home team name"
+            "title": "Matches",
+            "type": "array",
+            "description": "List of matches",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "homeTeam": {
+                        "type": "string",
+                        "description": "Home team name"
+                    },
+                    "awayTeam": {
+                        "type": "string",
+                        "description": "Away team name"
+                    }
                 },
-                "awayTeam": {
-                    "type": "string",
-                    "description": "Away team name"
-                }
-            },
-            "required": ["homeTeam", "awayTeam"]
+                "required": ["homeTeam", "awayTeam"]
+            }
         },
         "teamSelectionMode": {
+            "title": "Team selection mode",
             "type": "number",
-            "enum": [1, 2, 3]
+            "description": "Team selection mode",
+            "oneOf": [
+                {
+                    "const": 1,
+                    "title": "By teams",
+                    "description": "Single team selection"
+                },
+                {
+                    "const": 2,
+                    "title": "By matches",
+                    "description": "Dual team selection"
+                }
+            ]
         }
     },
-    "required": ["enabled", "teams", "numberOfVideos", "matches"],
+    "required": ["enabled", "teams", "numberOfVideos", "matches", "teamSelectionMode"],
     "additionalProperties": false
 }
