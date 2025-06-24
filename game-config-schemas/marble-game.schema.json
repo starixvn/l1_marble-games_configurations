@@ -20,8 +20,26 @@
             "additionalProperties": {
                 "type": "number"
             }
+        },
+        "matches": {
+            "type": "object",
+            "properties": {
+                "homeTeam": {
+                    "type": "string",
+                    "description": "Home team name"
+                },
+                "awayTeam": {
+                    "type": "string",
+                    "description": "Away team name"
+                }
+            },
+            "required": ["homeTeam", "awayTeam"]
+        },
+        "teamSelectionMode": {
+            "type": "number",
+            "enum": [1, 2, 3]
         }
     },
-    "required": ["enabled", "teams", "numberOfVideos"],
+    "required": ["enabled", "teams", "numberOfVideos", "matches"],
     "additionalProperties": false
 }
