@@ -63,5 +63,37 @@
         }
     },
     "required": ["enabled", "teams", "numberOfVideos", "matches", "teamSelectionMode"],
-    "additionalProperties": false
+    "additionalProperties": false,
+    "if": {
+        "properties": {
+            "teamSelectionMode": {
+                "const": 2
+            }
+        }
+    },
+    "then": {
+        "properties": {
+            "matches": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "homeTeam": {
+                            "type": "string",
+                            "enum": {
+                                "$data": "/teams"
+                            }
+                        },
+                        "awayTeam": {
+                            "type": "string",
+                            "enum": {
+                                "$data": "/teams"
+                            }
+                        }
+                    },
+                    "required": ["homeTeam", "awayTeam"]
+                }
+            }
+        }
+    }
 }
