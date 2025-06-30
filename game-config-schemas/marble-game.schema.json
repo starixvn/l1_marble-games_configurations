@@ -1,0 +1,64 @@
+{
+    "title": "Marble soccer",
+    "description": "Game config for the marble leagues",
+    "type": "object",
+    "properties": {
+        "enabled": {
+            "title": "Enabled",
+            "type": "boolean",
+            "description": "Whether the game is enabled",
+            "default": false
+        },
+        "teams": {
+            "title": "Teams",
+            "type": "array",
+            "description": "List of team names",
+            "items": {
+                "type": "string"
+            }
+        },
+        "numberOfVideos": {
+            "title": "Number of videos",
+            "type": "object",
+            "description": "Number of videos for each result sequence",
+            "additionalProperties": {
+                "type": "number"
+            }
+        },
+        "matches": {
+            "title": "Matches",
+            "type": "array",
+            "description": "List of matches",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "homeTeam": {
+                        "type": "string",
+                        "description": "Home team name"
+                    },
+                    "awayTeam": {
+                        "type": "string",
+                        "description": "Away team name"
+                    }
+                },
+                "required": ["homeTeam", "awayTeam"]
+            }
+        },
+        "teamSelectionMode": {
+            "title": "Team selection mode",
+            "type": "number",
+            "description": "Team selection mode",
+            "oneOf": [
+                {
+                    "const": 1,
+                    "title": "Random Team Pairing"
+                },
+                {
+                    "const": 2,
+                    "title": "Manual Match Setup"
+                }
+            ]
+        }
+    },
+    "required": ["enabled", "teams", "numberOfVideos", "matches", "teamSelectionMode"]
+}
