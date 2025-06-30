@@ -51,49 +51,14 @@
             "oneOf": [
                 {
                     "const": 1,
-                    "title": "By teams",
-                    "description": "Single team selection"
+                    "title": "Random Team Pairing"
                 },
                 {
                     "const": 2,
-                    "title": "By matches",
-                    "description": "Dual team selection"
+                    "title": "Manual Match Setup"
                 }
             ]
         }
     },
-    "required": ["enabled", "teams", "numberOfVideos", "matches", "teamSelectionMode"],
-    "additionalProperties": false,
-    "if": {
-        "properties": {
-            "teamSelectionMode": {
-                "const": 2
-            }
-        }
-    },
-    "then": {
-        "properties": {
-            "matches": {
-                "type": "array",
-                "items": {
-                    "type": "object",
-                    "properties": {
-                        "homeTeam": {
-                            "type": "string",
-                            "enum": {
-                                "$data": "/teams"
-                            }
-                        },
-                        "awayTeam": {
-                            "type": "string",
-                            "enum": {
-                                "$data": "/teams"
-                            }
-                        }
-                    },
-                    "required": ["homeTeam", "awayTeam"]
-                }
-            }
-        }
-    }
+    "required": ["enabled", "teams", "numberOfVideos", "matches", "teamSelectionMode"]
 }
