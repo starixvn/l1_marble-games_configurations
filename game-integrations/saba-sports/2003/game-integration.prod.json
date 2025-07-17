@@ -243,6 +243,10 @@
     },
     {
       "op": "remove",
+      "path": "/theme"
+    },
+    {
+      "op": "remove",
       "path": "/videoExtension"
     },
     {
