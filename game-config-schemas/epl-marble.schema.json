@@ -42,7 +42,33 @@
             },
             "theme": {
               "type": "string",
-              "description": "Theme"
+              "description": "Theme",
+              "oneOf": [
+                {
+                  "const": "epl_mun",
+                  "title": "Manchester United"
+                },
+                {
+                  "const": "epl_liv",
+                  "title": "Liverpool"
+                },
+                {
+                  "const": "epl_che",
+                  "title": "Chelsea"
+                },
+                {
+                  "const": "epl_ars",
+                  "title": "Arsenal"
+                },
+                {
+                  "const": "epl_mci",
+                  "title": "Manchester City"
+                },
+                {
+                  "const": "epl_tot",
+                  "title": "Tottenham"
+                }
+              ]
             }
           },
           "required": [
