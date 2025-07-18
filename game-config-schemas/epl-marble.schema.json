@@ -1,18 +1,15 @@
 {
     "title": "Marble Soccer EPL (English Premier League)",
-    "description": "Game config for the marble leagues, with Theme support (designed for EPL)",
     "type": "object",
     "properties": {
       "enabled": {
         "title": "Enabled",
         "type": "boolean",
-        "description": "Whether the game is enabled",
         "default": false
       },
       "teams": {
         "title": "Teams",
         "type": "array",
-        "description": "List of team names",
         "items": {
           "type": "string"
         }
@@ -20,7 +17,6 @@
       "numberOfVideos": {
         "title": "Number of videos",
         "type": "object",
-        "description": "Number of videos for each result sequence",
         "additionalProperties": {
           "type": "number"
         }
@@ -28,45 +24,44 @@
       "matches": {
         "title": "Matches",
         "type": "array",
-        "description": "List of matches",
         "items": {
           "type": "object",
           "properties": {
             "homeTeam": {
               "type": "string",
-              "description": "Home team name"
+              "title": "Home Team"
             },
             "awayTeam": {
               "type": "string",
-              "description": "Away team name"
+              "title": "Away Team"
             },
             "theme": {
               "type": "string",
-              "description": "Theme",
+              "title": "Theme",
               "oneOf": [
                 {
                   "const": "epl_mun",
-                  "title": "Manchester United"
+                  "title": "Manchester United (epl_mun)"
                 },
                 {
                   "const": "epl_liv",
-                  "title": "Liverpool"
+                  "title": "Liverpool (epl_liv)"
                 },
                 {
                   "const": "epl_che",
-                  "title": "Chelsea"
+                  "title": "Chelsea (epl_che)"
                 },
                 {
                   "const": "epl_ars",
-                  "title": "Arsenal"
+                  "title": "Arsenal (epl_ars)"
                 },
                 {
                   "const": "epl_mci",
-                  "title": "Manchester City"
+                  "title": "Manchester City (epl_mci)"
                 },
                 {
                   "const": "epl_tot",
-                  "title": "Tottenham"
+                  "title": "Tottenham (epl_tot)"
                 }
               ]
             }
@@ -80,7 +75,6 @@
       "teamSelectionMode": {
         "title": "Team selection mode",
         "type": "number",
-        "description": "Team selection mode",
         "oneOf": [
           {
             "const": 1,
@@ -94,10 +88,6 @@
       }
     },
     "required": [
-      "enabled",
-      "teams",
-      "numberOfVideos",
-      "matches",
-      "teamSelectionMode"
+      "enabled"
     ]
   }
