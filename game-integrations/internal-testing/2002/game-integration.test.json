@@ -285,6 +285,110 @@
           "settlementStatus": "REDACTED"
         }
       ]
+    },
+    {
+      "name": "MARKET_HOME_OVER_UNDER",
+      "merge": {
+        "marketID": 9,
+        "marketNameKey": "MARKET_HOME_OVER_UNDER",
+        "marketName": "Home Over/Under"
+      },
+      "selections": [
+        {
+          "selectionID": 19,
+          "column": 1,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "OVER",
+          "name": "ft_home_over",
+          "settlementStatus": "REDACTED"
+        },
+        {
+          "selectionID": 20,
+          "column": 2,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "UNDER",
+          "name": "ft_home_under",
+          "settlementStatus": "REDACTED"
+        }
+      ]
+    },
+    {
+      "name": "MARKET_AWAY_OVER_UNDER",
+      "merge": {
+        "marketID": 10,
+        "marketNameKey": "MARKET_AWAY_OVER_UNDER",
+        "marketName": "Away Over/Under"
+      },
+      "selections": [
+        {
+          "selectionID": 21,
+          "column": 1,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "OVER",
+          "name": "ft_away_over",
+          "settlementStatus": "REDACTED"
+        },
+        {
+          "selectionID": 22,
+          "column": 2,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "UNDER",
+          "name": "ft_away_under",
+          "settlementStatus": "REDACTED"
+        }
+      ]
+    },
+    {
+      "name": "MARKET_1H_HOME_OVER_UNDER",
+      "merge": {
+        "marketID": 11,
+        "marketNameKey": "MARKET_1H_HOME_OVER_UNDER",
+        "marketName": "1H Home Over/Under"
+      },
+      "selections": [
+        {
+          "selectionID": 23,
+          "column": 1,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "OVER",
+          "name": "h1_home_over",
+          "settlementStatus": "REDACTED"
+        },
+        {
+          "selectionID": 24,
+          "column": 2,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "UNDER",
+          "name": "h1_home_under",
+          "settlementStatus": "REDACTED"
+        }
+      ]
+    },
+    {
+      "name": "MARKET_1H_AWAY_OVER_UNDER",
+      "merge": {
+        "marketID": 12,
+        "marketNameKey": "MARKET_1H_AWAY_OVER_UNDER",
+        "marketName": "1H Away Over/Under"
+      },
+      "selections": [
+        {
+          "selectionID": 25,
+          "column": 1,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "OVER",
+          "name": "h1_away_over",
+          "settlementStatus": "REDACTED"
+        },
+        {
+          "selectionID": 26,
+          "column": 2,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "UNDER",
+          "name": "h1_away_under",
+          "settlementStatus": "REDACTED"
+        }
+      ]
     }
   ]
 }
