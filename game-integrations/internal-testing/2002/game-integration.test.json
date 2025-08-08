@@ -287,7 +287,7 @@
       ]
     },
     {
-      "name": "MARKET_HOME_OVER_UNDER",
+      "name": "MARKET_HOME_OVER_UNDER_TEST",
       "merge": {
         "marketID": 9,
         "marketNameKey": "MARKET_HOME_OVER_UNDER",
@@ -313,7 +313,7 @@
       ]
     },
     {
-      "name": "MARKET_AWAY_OVER_UNDER",
+      "name": "MARKET_AWAY_OVER_UNDER_TEST",
       "merge": {
         "marketID": 10,
         "marketNameKey": "MARKET_AWAY_OVER_UNDER",
@@ -339,7 +339,7 @@
       ]
     },
     {
-      "name": "MARKET_1H_HOME_OVER_UNDER",
+      "name": "MARKET_1H_HOME_OVER_UNDER_TEST",
       "merge": {
         "marketID": 11,
         "marketNameKey": "MARKET_1H_HOME_OVER_UNDER",
@@ -365,7 +365,7 @@
       ]
     },
     {
-      "name": "MARKET_1H_AWAY_OVER_UNDER",
+      "name": "MARKET_1H_AWAY_OVER_UNDER_TEST",
       "merge": {
         "marketID": 12,
         "marketNameKey": "MARKET_1H_AWAY_OVER_UNDER",
