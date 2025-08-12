@@ -58,6 +58,10 @@
         "op": "jsonata",
         "path": "/eventDetails/1/result",
         "expression": "$exists(eventDetails[1].result) and $exists(eventDetails[1].result.finalScore) ? eventDetails[1].result.finalScore : \"\""
+      },
+      {
+        "op": "remove",
+        "path": "/eventDetails/1/markets/3"
       }
     ],
     "markets": [
@@ -206,37 +210,6 @@
         ]
       },
       {
-        "name": "MARKET_1X2",
-        "merge": {
-          "marketID": 7,
-          "marketNameKey": "MARKET_1X2",
-          "marketName": "1X2"
-        },
-        "selections": [
-          {
-            "selectionID": 13,
-            "column": 1,
-            "selectionOrder": 1,
-            "selectionNameLongKey": "HOME",
-            "name": "ft_1x2_home"
-          },
-          {
-            "selectionID": 14,
-            "column": 2,
-            "selectionOrder": 1,
-            "selectionNameLongKey": "AWAY",
-            "name": "ft_1x2_away"
-          },
-          {
-            "selectionID": 15,
-            "column": 3,
-            "selectionOrder": 1,
-            "selectionNameLongKey": "TIE",
-            "name": "ft_1x2_draw"
-          }
-        ]
-      },
-      {
         "name": "MARKET_1H_1X2",
         "merge": {
           "marketID": 8,
@@ -264,6 +237,37 @@
             "selectionOrder": 1,
             "selectionNameLongKey": "TIE",
             "name": "h1_1x2_draw"
+          }
+        ]
+      },
+      {
+        "name": "MARKET_1X2",
+        "merge": {
+          "marketID": 7,
+          "marketNameKey": "MARKET_1X2",
+          "marketName": "1X2"
+        },
+        "selections": [
+          {
+            "selectionID": 13,
+            "column": 1,
+            "selectionOrder": 1,
+            "selectionNameLongKey": "HOME",
+            "name": "ft_1x2_home"
+          },
+          {
+            "selectionID": 14,
+            "column": 2,
+            "selectionOrder": 1,
+            "selectionNameLongKey": "AWAY",
+            "name": "ft_1x2_away"
+          },
+          {
+            "selectionID": 15,
+            "column": 3,
+            "selectionOrder": 1,
+            "selectionNameLongKey": "TIE",
+            "name": "ft_1x2_draw"
           }
         ]
       }
