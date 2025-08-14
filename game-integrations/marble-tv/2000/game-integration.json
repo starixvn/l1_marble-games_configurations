@@ -11,12 +11,12 @@
   "patches": [
     {
       "op": "jsonata",
-      "path": "/eventDetails/0/event",
+      "path": "/eventDetails/0/inGameEventInfo",
       "expression": "$exists(eventDetails[0].playlist) and $trim(eventDetails[0].playlist) != \"\" ? streamServer & '/event_' & eventDetails[0].playlist & '.json' : \"\""
     },
     {
       "op": "jsonata",
-      "path": "/eventDetails/1/event",
+      "path": "/eventDetails/1/inGameEventInfo",
       "expression": "$exists(eventDetails[1].playlist) and $trim(eventDetails[1].playlist) != \"\" ? streamServer & '/event_' & eventDetails[1].playlist & '.json' : \"\""
     },
     {
