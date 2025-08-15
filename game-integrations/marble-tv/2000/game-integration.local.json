@@ -3,7 +3,7 @@
   "mergeEvent": {
     "_id": null,
     "__v": null,
-    "streamServer": "https://d1aof1lwumql9k.cloudfront.net/2000",
+    "streamServer": "https://d10r8t0fxmjzn1.cloudfront.net",
     "videoExtension": "m3u8"
   },
   "mergeEventDetails": [],
@@ -11,26 +11,30 @@
     {
       "op": "jsonata",
       "path": "/eventDetails/0/playlist",
-      "expression": "$exists(eventDetails[0].playlist) and $trim(eventDetails[0].playlist) != \"\" ? streamServer & '/' & eventDetails[0].playlist & '.' & videoExtension : \"\""
+      "expression": "$exists(eventDetails[0].playlist) and $trim(eventDetails[0].playlist) != \"\" ? streamServer & '/' & theme & '/' & eventDetails[0].playlist & '.' & videoExtension : \"\""
     },
     {
       "op": "jsonata",
       "path": "/eventDetails/0/goalInfo",
-      "expression": "$exists(eventDetails[0].goalInfo) and $trim(eventDetails[0].goalInfo) != \"\" ? streamServer & '/' & eventDetails[0].goalInfo & '.json' : \"\""
+      "expression": "$exists(eventDetails[0].goalInfo) and $trim(eventDetails[0].goalInfo) != \"\" ? streamServer & '/' & theme & '/' & eventDetails[0].goalInfo & '.json' : \"\""
     },
     {
       "op": "jsonata",
       "path": "/eventDetails/1/playlist",
-      "expression": "$exists(eventDetails[1].playlist) and $trim(eventDetails[1].playlist) != \"\" ? streamServer & '/' & eventDetails[1].playlist & '.' & videoExtension : \"\""
+      "expression": "$exists(eventDetails[1].playlist) and $trim(eventDetails[1].playlist) != \"\" ? streamServer & '/'& theme & '/' & eventDetails[1].playlist & '.' & videoExtension : \"\""
     },
     {
       "op": "jsonata",
       "path": "/eventDetails/1/goalInfo",
-      "expression": "$exists(eventDetails[1].goalInfo) and $trim(eventDetails[1].goalInfo) != \"\" ? streamServer & '/' & eventDetails[1].goalInfo & '.json' : \"\""
+      "expression": "$exists(eventDetails[1].goalInfo) and $trim(eventDetails[1].goalInfo) != \"\" ? streamServer & '/' & theme & '/' & eventDetails[1].goalInfo & '.json' : \"\""
     },
     {
       "op": "remove",
       "path": "/streamServer"
+    },
+    {
+      "op": "remove",
+      "path": "/theme"
     },
     {
       "op": "remove",
