@@ -1,0 +1,14 @@
+{
+  "rest-client.environmentVariables": {
+    "$shared": {
+      "OPERATOR_ID": "67d291d943a96fad7f14ddae",
+      "OPERATOR_PASSWORD": "Nkb3rnoLMEhxUBB8Qahfn",
+      "ADMIN_USERNAME": "admin"
+    },
+    "LOCAL": {
+      "ADMIN_PASSWORD": "RFHcKIDw3UK8xfPw9WUpI",
+      "ODDS_FEED_URL": "https://mg-odds-feed-local.lumigame.com",
+      "ADMIN_URL": "https://mg-admin.lumigame.com"
+    }
+  }
+}

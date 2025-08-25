@@ -1,0 +1,32 @@
+### Login
+# @name login
+POST {{ADMIN_URL}}/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "{{ADMIN_USERNAME}}",
+    "password": "{{ADMIN_PASSWORD}}"
+}
+
+### Operators
+GET {{ADMIN_URL}}/api/operator/list
+Authorization: Bearer {{login.response.body.access_token}}
+Content-Type: application/json
+
+### Get Game integration
+# @name integration
+
+@game = 2002
+@operator = 67d291d943a96fad7f14ddae
+
+GET {{ADMIN_URL}}/api/gameIntegration/get?gameId={{game}}&operatorId={{operator}}
+Authorization: Bearer {{login.response.body.access_token}}
+Content-Type: application/json
+
+
+### Upsert Game integration
+POST {{ADMIN_URL}}/api/gameIntegration/upsert?gameId={{game}}&operatorId={{operator}}
+Authorization: Bearer {{login.response.body.access_token}}
+Content-Type: application/json
+
+< game-integrations/saba-sports/{{game}}/game-integration.json
