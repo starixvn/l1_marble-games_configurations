@@ -16,7 +16,7 @@ Content-Type: application/json
 
 ### Get event
 
-@eventId = 8598524567597
+@eventId = 8598524567711 
 
 GET {{ODDS_FEED_URL}}/api/events?eventID={{eventId}}
 Authorization: Bearer {{login.response.body.access_token}}

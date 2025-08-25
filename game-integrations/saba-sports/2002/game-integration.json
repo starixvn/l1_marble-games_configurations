@@ -5,8 +5,7 @@
     "_id": null,
     "__v": null,
     "streamServer": "https://d10r8t0fxmjzn1.cloudfront.net/galaxy",
-    "videoExtension": "mp4",
-    "minPrice": 1.1
+    "videoExtension": "mp4"
   },
   "mergeEventDetails": [],
   "patches": [
@@ -47,16 +46,17 @@
     {
       "op": "jsonata",
       "path": "/eventDetails",
-      "expression": "$map(eventDetails, function($v) { $exists($v.result) and $exists($v.result.finalScore) ? $merge([$v, {'result': $v.result.finalScore}]) : $v })"
+      "expression": "$map(eventDetails, function($v) { $merge([$v, {'result': $v.result.finalScore ?? \"\"}]) })"
     },
     {
       "op": "jsonata",
       "path": "/eventDetails/1/markets/3/selections",
-      "expression": "$map(eventDetails[1].markets[3].selections, function($v, $i, $a) { $count($a[price < minPrice]) > 0 ? $merge([$v, {'price': 0}]) : $v })"
+      "expression": "$map(eventDetails[1].markets[3].selections, function($v, $i, $a) { $count($a[price < 1.1]) > 0 ? $merge([$v, {'price': 0}]) : $v })"
     },
     {
-      "op": "remove",
-      "path": "/minPrice"
+      "op": "jsonata",
+      "path": "/eventDetails",
+      "expression": "$map(eventDetails, function($v) { $merge([$v, {'markets': $count($v.markets.selections) > 0 ? $v.markets : []}]) })"
     }
   ],
   "markets": [
