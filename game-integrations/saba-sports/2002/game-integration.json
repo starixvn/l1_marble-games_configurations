@@ -265,6 +265,102 @@
           "name": "h1_1x2_draw"
         }
       ]
+    },
+    {
+      "name": "MARKET_HOME_OVER_UNDER",
+      "merge": {
+        "marketID": 10,
+        "marketNameKey": "MARKET_HOME_OVER_UNDER",
+        "marketName": "Home Over/Under"
+      },
+      "selections": [
+        {
+          "selectionID": 23,
+          "column": 1,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "OVER",
+          "name": "ft_home_over"
+        },
+        {
+          "selectionID": 24,
+          "column": 2,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "UNDER",
+          "name": "ft_home_under"
+        }
+      ]
+    },
+    {
+      "name": "MARKET_AWAY_OVER_UNDER",
+      "merge": {
+        "marketID": 11,
+        "marketNameKey": "MARKET_AWAY_OVER_UNDER",
+        "marketName": "Away Over/Under"
+      },
+      "selections": [
+        {
+          "selectionID": 25,
+          "column": 1,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "OVER",
+          "name": "ft_away_over"
+        },
+        {
+          "selectionID": 26,
+          "column": 2,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "UNDER",
+          "name": "ft_away_under"
+        }
+      ]
+    },
+    {
+      "name": "MARKET_1H_HOME_OVER_UNDER",
+      "merge": {
+        "marketID": 13,
+        "marketNameKey": "MARKET_1H_HOME_OVER_UNDER",
+        "marketName": "1H Home Over/Under"
+      },
+      "selections": [
+        {
+          "selectionID": 30,
+          "column": 1,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "OVER",
+          "name": "h1_home_over"
+        },
+        {
+          "selectionID": 31,
+          "column": 2,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "UNDER",
+          "name": "h1_home_under"
+        }
+      ]
+    },
+    {
+      "name": "MARKET_1H_AWAY_OVER_UNDER",
+      "merge": {
+        "marketID": 14,
+        "marketNameKey": "MARKET_1H_AWAY_OVER_UNDER",
+        "marketName": "1H Away Over/Under"
+      },
+      "selections": [
+        {
+          "selectionID": 32,
+          "column": 1,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "OVER",
+          "name": "h1_away_over"
+        },
+        {
+          "selectionID": 33,
+          "column": 2,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "UNDER",
+          "name": "h1_away_under"
+        }
+      ]
     }
   ]
 }
