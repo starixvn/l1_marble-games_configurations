@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "teams": [
+    "clb_ars",
+    "clb_avl",
+    "clb_bou",
+    "clb_bre",
+    "clb_bha",
+    "clb_bur",
+    "clb_che",
+    "clb_cry",
+    "clb_eve",
+    "clb_ful",
+    "clb_lee",
+    "clb_liv",
+    "clb_mci",
+    "clb_mun",
+    "clb_new",
+    "clb_nfo",
+    "clb_sun",
+    "clb_tot",
+    "clb_whu",
+    "clb_wol"
+  ],
+  "numberOfVideos": {},
+  "matches": [],
+  "teamSelectionMode": 2
+}
