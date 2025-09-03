@@ -23,6 +23,18 @@
     },
     {
       "name": "MARKET_1X2"
+    },
+    {
+      "name": "MARKET_HOME_OVER_UNDER"
+    },
+    {
+      "name": "MARKET_AWAY_OVER_UNDER"
+    },
+    {
+      "name": "MARKET_1H_HOME_OVER_UNDER"
+    },
+    {
+      "name": "MARKET_1H_AWAY_OVER_UNDER"
     }
   ],
   "mergeEvent": {
