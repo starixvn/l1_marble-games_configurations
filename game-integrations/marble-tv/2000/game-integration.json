@@ -43,14 +43,6 @@
     },
     {
       "op": "remove",
-      "path": "/eventDetails/0/selections"
-    },
-    {
-      "op": "remove",
-      "path": "/eventDetails/1/selections"
-    },
-    {
-      "op": "remove",
       "path": "/eventDetails/0/markets"
     },
     {
@@ -70,6 +62,11 @@
       "op": "jsonata",
       "path": "/eventDetails/1/result",
       "expression": "$exists(eventDetails[1].result) and $exists(eventDetails[1].result.finalScore) ? eventDetails[1].result.finalScore : \"\""
+    },
+    {
+      "op": "jsonata",
+      "path": "/eventDetails",
+      "expression": "$map(eventDetails, function($detail) { $sift($detail, function($v, $k) { $k != 'selections' })})"
     }
   ]
 }
