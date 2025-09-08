@@ -25,6 +25,11 @@
       "expression": "$map(eventDetails, function($v) { $merge([$v, {'goalInfo': $exists($v.goalInfo) and $trim($v.goalInfo) != \"\" ? streamServer & '/' & theme & '/' & $v.goalInfo & '.json' : \"\" }])})"
     },
     {
+      "op": "jsonata",
+      "path": "/eventDetails",
+      "expression": "$map(eventDetails, function($v, $i) { $merge([$v, {'phase': $i }])})"
+    },
+    {
       "op": "remove",
       "path": "/streamServer"
     },
