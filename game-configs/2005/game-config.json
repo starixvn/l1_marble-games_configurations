@@ -1,28 +1,165 @@
 {
   "enabled": true,
   "teams": [
-    "clb_ars",
-    "clb_avl",
-    "clb_bou",
-    "clb_bre",
-    "clb_bha",
-    "clb_bur",
-    "clb_che",
-    "clb_cry",
-    "clb_eve",
-    "clb_ful",
-    "clb_lee",
     "clb_liv",
+    "clb_ars",
     "clb_mci",
-    "clb_mun",
+    "clb_che",
     "clb_new",
-    "clb_nfo",
-    "clb_sun",
     "clb_tot",
-    "clb_whu",
-    "clb_wol"
+    "clb_nap",
+    "clb_int",
+    "clb_ata",
+    "clb_juv",
+    "clb_bar",
+    "clb_rma",
+    "clb_atm",
+    "clb_ath",
+    "clb_vil",
+    "clb_fcb",
+    "clb_b04",
+    "clb_sge",
+    "clb_bvb",
+    "clb_psg",
+    "clb_om",
+    "clb_asm",
+    "clb_psv",
+    "clb_ajx",
+    "clb_scp",
+    "clb_usg",
+    "clb_gal",
+    "clb_slp",
+    "clb_oly",
+    "clb_ben",
+    "clb_bru",
+    "clb_cph",
+    "clb_kai",
+    "clb_bod",
+    "clb_paf",
+    "clb_qar"
   ],
   "numberOfVideos": {},
-  "matches": [],
+  "matches": [
+    {
+      "homeTeam": "clb_ars",
+      "awayTeam": "clb_slp",
+      "theme": "ucl_ars"
+    },
+    {
+      "homeTeam": "clb_juv",
+      "awayTeam": "clb_scp",
+      "theme": "ucl_juv"
+    },
+    {
+      "homeTeam": "clb_tot",
+      "awayTeam": "clb_cph",
+      "theme": "ucl_tot"
+    },
+    {
+      "homeTeam": "clb_psg",
+      "awayTeam": "clb_fcb",
+      "theme": "ucl_psg"
+    },
+    {
+      "homeTeam": "clb_liv",
+      "awayTeam": "clb_rma",
+      "theme": "ucl_liv"
+    },
+    {
+      "homeTeam": "clb_che",
+      "awayTeam": "clb_qar",
+      "theme": "ucl_che"
+    },
+    {
+      "homeTeam": "clb_mci",
+      "awayTeam": "clb_bvb",
+      "theme": "ucl_mci"
+    },
+    {
+      "homeTeam": "clb_bar",
+      "awayTeam": "clb_bru",
+      "theme": "ucl_bar"
+    },
+    {
+      "homeTeam": "clb_mci",
+      "awayTeam": "clb_b04",
+      "theme": "ucl_mci"
+    },
+    {
+      "homeTeam": "clb_juv",
+      "awayTeam": "clb_bod",
+      "theme": "ucl_juv"
+    },
+    {
+      "homeTeam": "clb_che",
+      "awayTeam": "clb_bar",
+      "theme": "ucl_che"
+    },
+    {
+      "homeTeam": "clb_liv",
+      "awayTeam": "clb_psv",
+      "theme": "ucl_liv"
+    },
+    {
+      "homeTeam": "clb_psg",
+      "awayTeam": "clb_tot",
+      "theme": "ucl_psg"
+    },
+    {
+      "homeTeam": "clb_ars",
+      "awayTeam": "clb_fcb",
+      "theme": "ucl_ars"
+    },
+    {
+      "homeTeam": "clb_rma",
+      "awayTeam": "clb_om",
+      "theme": "ucl_rma"
+    },
+    {
+      "homeTeam": "clb_fcb",
+      "awayTeam": "clb_scp",
+      "theme": "ucl_fcb"
+    },
+    {
+      "homeTeam": "clb_bar",
+      "awayTeam": "clb_sge",
+      "theme": "ucl_bar"
+    },
+    {
+      "homeTeam": "clb_tot",
+      "awayTeam": "clb_slp",
+      "theme": "ucl_tot"
+    },
+    {
+      "homeTeam": "clb_che",
+      "awayTeam": "clb_ata",
+      "theme": "ucl_che"
+    },
+    {
+      "homeTeam": "clb_liv",
+      "awayTeam": "clb_int",
+      "theme": "ucl_liv"
+    },
+    {
+      "homeTeam": "clb_psg",
+      "awayTeam": "clb_ath",
+      "theme": "ucl_psg"
+    },
+    {
+      "homeTeam": "clb_ars",
+      "awayTeam": "clb_bru",
+      "theme": "ucl_ars"
+    },
+    {
+      "homeTeam": "clb_juv",
+      "awayTeam": "clb_paf",
+      "theme": "ucl_juv"
+    },
+    {
+      "homeTeam": "clb_rma",
+      "awayTeam": "clb_mci",
+      "theme": "ucl_rma"
+    }
+  ],
   "teamSelectionMode": 2
 }
