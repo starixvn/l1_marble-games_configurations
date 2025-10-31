@@ -1,0 +1,7 @@
+include:
+  - project: ci/core-cicd
+    ref: main
+    file: luminet.gitlab-ci.yml
+
+variables:
+  SYNC_ARGOCD_SHARED_CONFIGMAPS_APP: "true"
