@@ -1,0 +1,156 @@
+{
+  "markets": [
+    {
+      "name": "SGVG_MARKET_OVER_UNDER",
+      "merge": {
+        "marketID": 3,
+        "marketNameKey": "MARKET_OVER_UNDER",
+        "marketName": "Over/Under"
+      },
+      "selections": [
+        {
+          "selectionID": 5,
+          "column": 1,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "OVER",
+          "name": "ft_ou_over",
+          "betChoice": "ft_ou_over"
+        },
+        {
+          "selectionID": 6,
+          "column": 2,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "UNDER",
+          "name": "ft_ou_under",
+          "betChoice": "ft_ou_under"
+        }
+      ]
+    },
+    {
+      "name": "SGVG_MARKET_EVEN_ODD",
+      "merge": {
+        "marketID": 5,
+        "marketNameKey": "MARKET_EVEN_ODD",
+        "marketName": "Odd/Even"
+      },
+      "selections": [
+        {
+          "selectionID": 9,
+          "column": 1,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "EVEN",
+          "name": "ft_oe_even",
+          "betChoice": "ft_oe_even"
+        },
+        {
+          "selectionID": 10,
+          "column": 2,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "ODD",
+          "name": "ft_oe_odd",
+          "betChoice": "ft_oe_odd"
+        }
+      ]
+    },
+    {
+      "name": "SGVG_MARKET_1X2",
+      "merge": {
+        "marketID": 7,
+        "marketNameKey": "MARKET_1X2",
+        "marketName": "1X2",
+        "hedgeBetExclusion": [
+          "ft_1x2_draw"
+        ]
+      },
+      "selections": [
+        {
+          "selectionID": 13,
+          "column": 1,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "HOME",
+          "name": "ft_1x2_home",
+          "betChoice": "ft_1x2_home"
+        },
+        {
+          "selectionID": 14,
+          "column": 2,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "AWAY",
+          "name": "ft_1x2_away",
+          "betChoice": "ft_1x2_away"
+        },
+        {
+          "selectionID": 15,
+          "column": 3,
+          "selectionOrder": 1,
+          "selectionNameLongKey": "TIE",
+          "name": "ft_1x2_draw",
+          "betChoice": "ft_1x2_draw"
+        }
+      ]
+    }
+  ],
+  "mergeEvent": {
+    "_id": null,
+    "__v": null,
+    "operatorGameId": "158",
+    "streamServer": "https://d1aof1lwumql9k.cloudfront.net",
+    "videoExtension": "m3u8",
+    "config": {
+      "delay": {
+        "videoDelayInMillisecond": 6000
+      },
+      "bet": {
+        "delayPlaceBetByOddsAvailableByMilliseconds": 0,
+        "lockBetTimeBeforeScheduleStartByMilliseconds": 3000
+      },
+      "intro": {
+        "duration": 8,
+        "resourceServer": "https://d1aof1lwumql9k.cloudfront.net/marble_tv/"
+      },
+      "voice": {
+        "configJson": "https://d1aof1lwumql9k.cloudfront.net/youtube/config_voice.json"
+      }
+    }
+  },
+  "mergeEventDetails": [],
+  "patches": [
+    {
+      "op": "jsonata",
+      "path": "/eventDetails",
+      "expression": "$map(eventDetails, function($v) { $merge([$v, {'inGameEventInfo': $exists($v.goalInfo) and $trim($v.goalInfo) != \"\" ? streamServer & '/' & theme & '/event_' & $v.goalInfo & '.json' : \"\" }])})"
+    },
+    {
+      "op": "jsonata",
+      "path": "/eventDetails",
+      "expression": "$map(eventDetails, function($v) { $merge([$v, {'playlist': $exists($v.playlist) and $trim($v.playlist) != \"\" ? streamServer & '/' & theme & '/' & $v.playlist & '.' & videoExtension : \"\" }])})"
+    },
+    {
+      "op": "jsonata",
+      "path": "/eventDetails",
+      "expression": "$map(eventDetails, function($v) { $merge([$v, {'goalInfo': $exists($v.goalInfo) and $trim($v.goalInfo) != \"\" ? streamServer & '/' & theme & '/' & $v.goalInfo & '.json' : \"\" }])})"
+    },
+    {
+      "op": "remove",
+      "path": "/streamServer"
+    },
+    {
+      "op": "remove",
+      "path": "/theme"
+    },
+    {
+      "op": "remove",
+      "path": "/videoExtension"
+    },
+    {
+      "op": "jsonata",
+      "path": "/eventDetails",
+      "expression": "$map(eventDetails, function($v) { $merge([$v, {'result': $v.result.finalScore ?? \"\"}]) })"
+    },
+    {
+      "op": "jsonata",
+      "path": "/eventDetails",
+      "expression": "$map(eventDetails, function($detail) { $sift($detail, function($v, $k) { $k != 'selections' })})"
+    }
+  ]
+}
