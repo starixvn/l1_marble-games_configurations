@@ -1,6 +1,6 @@
 # SABA Sports Integrations
 
-[[TOC]]
+[[_TOC_]]
 
 ## 1. mergeEvent Section
 
