@@ -1,109 +1,104 @@
 {
-    "title": "Marble Soccer SPL (Spinner Champions League)",
-    "type": "object",
-    "properties": {
-      "enabled": {
-        "title": "Enabled",
-        "type": "boolean",
-        "default": false
-      },
-      "teams": {
-        "title": "Teams",
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      "numberOfVideos": {
-        "title": "Number of videos",
-        "type": "object",
-        "additionalProperties": {
-          "type": "number"
-        }
-      },
-      "matches": {
-        "title": "Matches",
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "homeTeam": {
-              "type": "string",
-              "title": "Home Team"
-            },
-            "awayTeam": {
-              "type": "string",
-              "title": "Away Team"
-            },
-            "theme": {
-              "type": "string",
-              "title": "Theme",
-              "oneOf": [
-                {
-                  "const": "ucl_psg",
-                  "title": "Paris Saint-Germain"
-                },
-                {
-                  "const": "ucl_rma",
-                  "title": "Real Madrid"
-                },
-                {
-                  "const": "ucl_tot",
-                  "title": "Tottenham Hotspur"
-                },
-                {
-                  "const": "ucl_ars",
-                  "title": "Arsenal"
-                },
-                {
-                  "const": "ucl_bar",
-                  "title": "Barcelona"
-                },
-                {
-                  "const": "ucl_che",
-                  "title": "Chelsea"
-                },
-                {
-                  "const": "ucl_fcb",
-                  "title": "Bayern Munich"
-                },
-                {
-                  "const": "ucl_juv",
-                  "title": "Juventus"
-                },
-                {
-                  "const": "ucl_liv",
-                  "title": "Liverpool"
-                },
-                {
-                  "const": "ucl_mci",
-                  "title": "Manchester City"
-                }
-              ]
-            }
-          },
-          "required": [
-            "homeTeam",
-            "awayTeam"
-          ]
-        }
-      },
-      "teamSelectionMode": {
-        "title": "Team selection mode",
-        "type": "number",
-        "oneOf": [
-          {
-            "const": 1,
-            "title": "Random Team Pairing"
-          },
-          {
-            "const": 2,
-            "title": "Manual Match Setup"
-          }
-        ]
+  "title": "Marble Soccer SPL (Spinner Champions League)",
+  "type": "object",
+  "properties": {
+    "enabled": {
+      "title": "Enabled",
+      "type": "boolean",
+      "default": false
+    },
+    "teams": {
+      "title": "Teams",
+      "type": "array",
+      "items": {
+        "type": "string"
       }
     },
-    "required": [
-      "enabled"
-    ]
-  }
+    "numberOfVideos": {
+      "title": "Number of videos",
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "matches": {
+      "title": "Matches",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "homeTeam": {
+            "type": "string",
+            "title": "Home Team"
+          },
+          "awayTeam": {
+            "type": "string",
+            "title": "Away Team"
+          },
+          "theme": {
+            "type": "string",
+            "title": "Theme",
+            "oneOf": [
+              {
+                "const": "ucl_psg",
+                "title": "Paris Saint-Germain"
+              },
+              {
+                "const": "ucl_rma",
+                "title": "Real Madrid"
+              },
+              {
+                "const": "ucl_tot",
+                "title": "Tottenham Hotspur"
+              },
+              {
+                "const": "ucl_ars",
+                "title": "Arsenal"
+              },
+              {
+                "const": "ucl_bar",
+                "title": "Barcelona"
+              },
+              {
+                "const": "ucl_che",
+                "title": "Chelsea"
+              },
+              {
+                "const": "ucl_fcb",
+                "title": "Bayern Munich"
+              },
+              {
+                "const": "ucl_juv",
+                "title": "Juventus"
+              },
+              {
+                "const": "ucl_liv",
+                "title": "Liverpool"
+              },
+              {
+                "const": "ucl_mci",
+                "title": "Manchester City"
+              }
+            ]
+          }
+        },
+        "required": ["homeTeam", "awayTeam"]
+      }
+    },
+    "teamSelectionMode": {
+      "title": "Team selection mode",
+      "type": "number",
+      "oneOf": [
+        {
+          "const": 1,
+          "title": "Random Team Pairing"
+        },
+        {
+          "const": 2,
+          "title": "Manual Match Setup"
+        }
+      ]
+    }
+  },
+  "required": ["enabled"]
+}

@@ -29,4 +29,4 @@ POST {{ADMIN_URL}}/api/gameIntegration/upsert?gameId={{game}}&operatorId={{opera
 Authorization: Bearer {{login.response.body.access_token}}
 Content-Type: application/json
 
-< game-integrations/saba-sports/{{game}}/game-integration.json
+< ../game-integrations/saba-sports/{{game}}/game-integration.json

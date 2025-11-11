@@ -1,93 +1,88 @@
 {
-    "title": "Marble Soccer EPL (English Premier League)",
-    "type": "object",
-    "properties": {
-      "enabled": {
-        "title": "Enabled",
-        "type": "boolean",
-        "default": false
-      },
-      "teams": {
-        "title": "Teams",
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      "numberOfVideos": {
-        "title": "Number of videos",
-        "type": "object",
-        "additionalProperties": {
-          "type": "number"
-        }
-      },
-      "matches": {
-        "title": "Matches",
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "homeTeam": {
-              "type": "string",
-              "title": "Home Team"
-            },
-            "awayTeam": {
-              "type": "string",
-              "title": "Away Team"
-            },
-            "theme": {
-              "type": "string",
-              "title": "Theme",
-              "oneOf": [
-                {
-                  "const": "epl_mun",
-                  "title": "Manchester United (epl_mun)"
-                },
-                {
-                  "const": "epl_liv",
-                  "title": "Liverpool (epl_liv)"
-                },
-                {
-                  "const": "epl_che",
-                  "title": "Chelsea (epl_che)"
-                },
-                {
-                  "const": "epl_ars",
-                  "title": "Arsenal (epl_ars)"
-                },
-                {
-                  "const": "epl_mci",
-                  "title": "Manchester City (epl_mci)"
-                },
-                {
-                  "const": "epl_tot",
-                  "title": "Tottenham (epl_tot)"
-                }
-              ]
-            }
-          },
-          "required": [
-            "homeTeam",
-            "awayTeam"
-          ]
-        }
-      },
-      "teamSelectionMode": {
-        "title": "Team selection mode",
-        "type": "number",
-        "oneOf": [
-          {
-            "const": 1,
-            "title": "Random Team Pairing"
-          },
-          {
-            "const": 2,
-            "title": "Manual Match Setup"
-          }
-        ]
+  "title": "Marble Soccer EPL (English Premier League)",
+  "type": "object",
+  "properties": {
+    "enabled": {
+      "title": "Enabled",
+      "type": "boolean",
+      "default": false
+    },
+    "teams": {
+      "title": "Teams",
+      "type": "array",
+      "items": {
+        "type": "string"
       }
     },
-    "required": [
-      "enabled"
-    ]
-  }
+    "numberOfVideos": {
+      "title": "Number of videos",
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "matches": {
+      "title": "Matches",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "homeTeam": {
+            "type": "string",
+            "title": "Home Team"
+          },
+          "awayTeam": {
+            "type": "string",
+            "title": "Away Team"
+          },
+          "theme": {
+            "type": "string",
+            "title": "Theme",
+            "oneOf": [
+              {
+                "const": "epl_mun",
+                "title": "Manchester United (epl_mun)"
+              },
+              {
+                "const": "epl_liv",
+                "title": "Liverpool (epl_liv)"
+              },
+              {
+                "const": "epl_che",
+                "title": "Chelsea (epl_che)"
+              },
+              {
+                "const": "epl_ars",
+                "title": "Arsenal (epl_ars)"
+              },
+              {
+                "const": "epl_mci",
+                "title": "Manchester City (epl_mci)"
+              },
+              {
+                "const": "epl_tot",
+                "title": "Tottenham (epl_tot)"
+              }
+            ]
+          }
+        },
+        "required": ["homeTeam", "awayTeam"]
+      }
+    },
+    "teamSelectionMode": {
+      "title": "Team selection mode",
+      "type": "number",
+      "oneOf": [
+        {
+          "const": 1,
+          "title": "Random Team Pairing"
+        },
+        {
+          "const": 2,
+          "title": "Manual Match Setup"
+        }
+      ]
+    }
+  },
+  "required": ["enabled"]
+}

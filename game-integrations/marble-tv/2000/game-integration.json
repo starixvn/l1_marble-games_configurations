@@ -3,9 +3,9 @@
   "mergeEvent": {
     "_id": null,
     "__v": null,
-    "streamServer": "https://d1aof1lwumql9k.cloudfront.net",
+    "streamServer": "https://d10r8t0fxmjzn1.cloudfront.net",
     "videoExtension": "m3u8",
-    "voiceConfig": "https://d1aof1lwumql9k.cloudfront.net/youtube/config_voice.json"
+    "voiceConfig": "https://d10r8t0fxmjzn1.cloudfront.net/youtube/config_voice.json"
   },
   "mergeEventDetails": [],
   "patches": [
