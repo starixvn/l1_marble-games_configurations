@@ -73,7 +73,7 @@
     {
       "op": "jsonata",
       "path": "/eventDetails",
-      "expression": "eventDetails ~> | $ | {'result': result.finalScore ?? \"\"}, ['phase', 'selections'] |"
+      "expression": "eventDetails ~> | $ | {'result': result.finalScore ?? \"\"}, ['selections'] |"
     },
     {
       "op": "remove",
