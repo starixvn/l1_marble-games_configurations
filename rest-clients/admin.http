@@ -16,7 +16,7 @@ Content-Type: application/json
 ### Get Game integration
 # @name integration
 
-@game = 2002
+@game = 2006
 @operator = 67d291d943a96fad7f14ddae
 
 GET {{ADMIN_URL}}/api/gameIntegration/get?gameId={{game}}&operatorId={{operator}}
