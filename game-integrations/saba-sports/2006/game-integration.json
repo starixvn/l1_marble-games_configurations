@@ -42,7 +42,6 @@
     "productTypeKey": "MARBLE",
     "_id": null,
     "__v": null,
-    "gameId": null,
     "streamServer": "https://d10r8t0fxmjzn1.cloudfront.net",
     "videoExtension": "mp4"
   },
