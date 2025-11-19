@@ -3,11 +3,6 @@
   "mergeEvent": {
     "_id": null,
     "__v": null,
-<<<<<<< HEAD
-    "streamServer": "https://d10r8t0fxmjzn1.cloudfront.net",
-    "videoExtension": "m3u8",
-    "voiceConfig": "https://d10r8t0fxmjzn1.cloudfront.net/youtube/config_voice.json"
-=======
     "streamServer": "https://d1aof1lwumql9k.cloudfront.net",
     "videoExtension": "m3u8",
     "config": {
@@ -26,7 +21,6 @@
         "defaultLength": 30
       }
     }
->>>>>>> d0ddf75 (chore: ultra-live and marble tv games - Epic GL-4863)
   },
   "mergeEventDetails": [],
   "patches": [
@@ -75,20 +69,9 @@
       "path": "/gameId"
     },
     {
-<<<<<<< HEAD
-      "op": "jsonata",
-      "path": "/eventDetails/0/result",
-      "expression": "$exists(eventDetails[0].result) and $exists(eventDetails[0].result.finalScore) ? eventDetails[0].result.finalScore : \"\""
-    },
-    {
-      "op": "jsonata",
-      "path": "/eventDetails/1/result",
-      "expression": "$exists(eventDetails[1].result) and $exists(eventDetails[1].result.finalScore) ? eventDetails[1].result.finalScore : \"\""
-=======
         "op": "jsonata",
         "path": "/eventDetails",
         "expression": "$map(eventDetails, function($v) { $merge([$v, {'result': $v.result.finalScore ?? \"\"}]) })"
->>>>>>> d0ddf75 (chore: ultra-live and marble tv games - Epic GL-4863)
     },
     {
       "op": "jsonata",
@@ -96,8 +79,4 @@
       "expression": "$map(eventDetails, function($detail) { $sift($detail, function($v, $k) { $k != 'selections' })})"
     }
   ]
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d0ddf75 (chore: ultra-live and marble tv games - Epic GL-4863)

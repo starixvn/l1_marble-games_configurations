@@ -8,6 +8,9 @@
     "config": {
       "delay": {
         "eventDetailChangeMs": 6000
+      },
+      "voice": {
+        "configJson": "https://d1aof1lwumql9k.cloudfront.net/ultra_live_galaxy/config_voice.json"
       }
     }
   },
