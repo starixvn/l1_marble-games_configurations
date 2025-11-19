@@ -1,0 +1,78 @@
+{
+    "markets": [],
+    "mergeEvent": {
+      "_id": null,
+      "__v": null,
+      "streamServer": "https://d1aof1lwumql9k.cloudfront.net",
+      "videoExtension": "m3u8",
+      "config": {
+        "delay": {
+          "globalDelayInMillisecond": 10000,
+          "videoDelayInMillisecond": 3000
+        },
+        "voice": {
+          "configJson": "https://d1aof1lwumql9k.cloudfront.net/youtube/config_voice.json"
+        },
+        "video": {
+          "defaultLength": 30
+        }
+      }
+    },
+    "mergeEventDetails": [],
+    "patches": [
+      {
+        "op": "jsonata",
+        "path": "/eventDetails",
+        "expression": "$map(eventDetails, function($v) { $merge([$v, {'inGameEventInfo': $exists($v.goalInfo) and $trim($v.goalInfo) != \"\" ? streamServer & '/' & theme & '/event_' & $v.goalInfo & '.json' : \"\" }])})"
+      },
+      {
+        "op": "jsonata",
+        "path": "/eventDetails",
+        "expression": "$map(eventDetails, function($v) { $merge([$v, {'playlist': $exists($v.playlist) and $trim($v.playlist) != \"\" ? streamServer & '/' & theme & '/' & $v.playlist & '.' & videoExtension : \"\" }])})"
+      },
+      {
+        "op": "jsonata",
+        "path": "/eventDetails",
+        "expression": "$map(eventDetails, function($v) { $merge([$v, {'goalInfo': $exists($v.goalInfo) and $trim($v.goalInfo) != \"\" ? streamServer & '/' & theme & '/' & $v.goalInfo & '.json' : \"\" }])})"
+      },
+      {
+        "op": "jsonata",
+        "path": "/eventDetails",
+        "expression": "$map(eventDetails, function($v, $i) { $merge([$v, {'phase': $i }])})"
+      },
+      {
+        "op": "remove",
+        "path": "/streamServer"
+      },
+      {
+        "op": "remove",
+        "path": "/theme"
+      },
+      {
+        "op": "remove",
+        "path": "/videoExtension"
+      },
+      {
+        "op": "remove",
+        "path": "/eventDetails/0/markets"
+      },
+      {
+        "op": "remove",
+        "path": "/eventDetails/1/markets"
+      },
+      {
+        "op": "remove",
+        "path": "/gameId"
+      },
+      {
+        "op": "jsonata",
+        "path": "/eventDetails",
+        "expression": "$map(eventDetails, function($v) { $merge([$v, {'result': $v.result.finalScore ?? \"\"}]) })"
+    },
+      {
+        "op": "jsonata",
+        "path": "/eventDetails",
+        "expression": "$map(eventDetails, function($detail) { $sift($detail, function($v, $k) { $k != 'selections' })})"
+      }
+    ]
+  }

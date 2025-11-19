@@ -1,0 +1,23 @@
+### Login
+# @name login
+POST {{ODDS_FEED_URL}}/api/login
+Content-Type: application/json
+
+{
+    "operatorId": "{{OPERATOR_ID}}",
+    "password": "{{OPERATOR_PASSWORD}}"
+}
+
+### Get Schedule
+# @name schedule
+GET {{ODDS_FEED_URL}}/api/schedule
+Authorization: Bearer {{login.response.body.access_token}}
+Content-Type: application/json
+
+### Get event
+
+@eventId = 8607114484816 
+
+GET {{ODDS_FEED_URL}}/api/events?eventID={{eventId}}
+Authorization: Bearer {{login.response.body.access_token}}
+Content-Type: application/json
