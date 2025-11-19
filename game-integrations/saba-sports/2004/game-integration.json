@@ -1,0 +1,101 @@
+{
+    "markets": [
+      {
+        "name": "MARKET_HANDICAP"
+      },
+      {
+        "name": "MARKET_1H_HANDICAP"
+      },
+      {
+        "name": "MARKET_OVER_UNDER"
+      },
+      {
+        "name": "MARKET_1H_OVER_UNDER"
+      },
+      {
+        "name": "MARKET_EVEN_ODD"
+      },
+      {
+        "name": "MARKET_1H_EVEN_ODD"
+      },
+      {
+        "name": "MARKET_1H_1X2"
+      },
+      {
+        "name": "MARKET_1X2"
+      },
+      {
+        "name": "MARKET_HOME_OVER_UNDER"
+      },
+      {
+        "name": "MARKET_AWAY_OVER_UNDER"
+      },
+      {
+        "name": "MARKET_1H_HOME_OVER_UNDER"
+      },
+      {
+        "name": "MARKET_1H_AWAY_OVER_UNDER"
+      }
+    ],
+    "mergeEvent": {
+      "productCode": "SM_SPINNER_GALAXY_ULTRA_LIVE",
+      "productTypeKey": "MARBLE",
+      "_id": null,
+      "__v": null,
+      "streamServer": "https://d10r8t0fxmjzn1.cloudfront.net",
+      "videoExtension": "mp4"
+    },
+    "mergeEventDetails": [],
+    "patches": [
+      {
+        "op": "jsonata",
+        "path": "/eventDetails",
+        "expression": "$map(eventDetails, function($v) { $merge([$v, {'playlist': $exists($v.playlist) and $trim($v.playlist) != \"\" ? streamServer & '/' & theme & '/' & $v.playlist & '.' & videoExtension : \"\" }])})"
+      },
+      {
+        "op": "jsonata",
+        "path": "/eventDetails",
+        "expression": "$map(eventDetails, function($v) { $merge([$v, {'goalInfo': $exists($v.goalInfo) and $trim($v.goalInfo) != \"\" ? streamServer & '/' & theme & '/' & $v.goalInfo & '.json' : \"\" }])})"
+      },
+      {
+        "op": "remove",
+        "path": "/streamServer"
+      },
+      {
+        "op": "remove",
+        "path": "/theme"
+      },
+      {
+        "op": "remove",
+        "path": "/videoExtension"
+      },
+      {
+        "op": "remove",
+        "path": "/eventDetails/0/selections"
+      },
+      {
+        "op": "remove",
+        "path": "/eventDetails/1/selections"
+      },
+      {
+        "op": "remove",
+        "path": "/gameId"
+      },
+      {
+        "op": "jsonata",
+        "path": "/eventDetails",
+        "expression": "$map(eventDetails, function($v) { $merge([$v, {'result': $v.result.finalScore ?? \"\"}]) })"
+      },
+      {
+        "op": "jsonata",
+        "path": "/eventDetails",
+        "expression": "$map(eventDetails, function($detail) { $merge([$detail, {'markets': $filter($detail.markets, function($market) { $count($market.selections[price < 1.1]) = 0 })}])})"
+      },
+      {
+        "op": "jsonata",
+        "path": "/eventDetails",
+        "expression": "$map(eventDetails, function($v) { $merge([$v, {'markets': $count($v.markets.selections) > 0 ? $v.markets : []}]) })"
+      }
+    ]
+  }
+  
