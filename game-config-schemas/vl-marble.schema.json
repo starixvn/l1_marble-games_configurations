@@ -27,46 +27,14 @@
       "items": {
         "type": "object",
         "properties": {
-          "homeTeam": {
-            "type": "string",
-            "title": "Home Team",
-            "oneOf": [
-              { "const": "clb_btc", "title": "Becamex TP. HCM" },
-              { "const": "clb_cah", "title": "Công An Hà Nội" },
-              { "const": "clb_cat", "title": "Công An TP. HCM" },
-              { "const": "clb_vie", "title": "Thể Công Viettel" },
-              { "const": "clb_hai", "title": "Hải Phòng" },
-              { "const": "clb_hht", "title": "Hồng Lĩnh Hà Tĩnh" },
-              { "const": "clb_han", "title": "Hà Nội" },
-              { "const": "clb_ndi", "title": "Thép Xanh Nam Định" },
-              { "const": "clb_pvc", "title": "PVF-CAND" },
-              { "const": "clb_sln", "title": "Sông Lam Nghệ An" },
-              { "const": "clb_dan", "title": "SHB Đà Nẵng" },
-              { "const": "clb_nin", "title": "Ninh Bình" },
-              { "const": "clb_tha", "title": "Đông Á Thanh Hóa" },
-              { "const": "clb_hag", "title": "Hoàng Anh Gia Lai" }
-            ]
-          },
-          "awayTeam": {
-            "type": "string",
-            "title": "Away Team",
-            "oneOf": [
-              { "const": "clb_btc", "title": "Becamex TP. HCM" },
-              { "const": "clb_cah", "title": "Công An Hà Nội" },
-              { "const": "clb_cat", "title": "Công An TP. HCM" },
-              { "const": "clb_vie", "title": "Thể Công Viettel" },
-              { "const": "clb_hai", "title": "Hải Phòng" },
-              { "const": "clb_hht", "title": "Hồng Lĩnh Hà Tĩnh" },
-              { "const": "clb_han", "title": "Hà Nội" },
-              { "const": "clb_ndi", "title": "Thép Xanh Nam Định" },
-              { "const": "clb_pvc", "title": "PVF-CAND" },
-              { "const": "clb_sln", "title": "Sông Lam Nghệ An" },
-              { "const": "clb_dan", "title": "SHB Đà Nẵng" },
-              { "const": "clb_nin", "title": "Ninh Bình" },
-              { "const": "clb_tha", "title": "Đông Á Thanh Hóa" },
-              { "const": "clb_hag", "title": "Hoàng Anh Gia Lai" }
-            ]
-          },
+            "homeTeam": {
+                "type": "string",
+                "title": "Home Team"
+              },
+              "awayTeam": {
+                "type": "string",
+                "title": "Away Team"
+              },
           "theme": {
             "type": "string",
             "title": "Theme",
