@@ -3,19 +3,20 @@
   "mergeEvent": {
     "_id": null,
     "__v": null,
-    "streamServer": "https://d1aof1lwumql9k.cloudfront.net",
-    "videoExtension": "m3u8",
+    "streamServer": "https://d10r8t0fxmjzn1.cloudfront.net",
     "config": {
       "delay": {
         "eventDetailChangeMs": 6000
-      },
-      "voice": {
-        "configJson": "https://d1aof1lwumql9k.cloudfront.net/ultra_live_galaxy/config_voice.json"
       }
     }
   },
   "mergeEventDetails": [],
   "patches": [
+    {
+      "op": "jsonata",
+      "path": "/config/voice/configJson",
+      "expression": "streamServer & '/' & theme & '/config_voice.json'"
+    },
     {
       "op": "jsonata",
       "path": "/eventDetails",
@@ -24,7 +25,7 @@
     {
       "op": "jsonata",
       "path": "/eventDetails",
-      "expression": "$map(eventDetails, function($v) { $merge([$v, {'playlist': $exists($v.playlist) and $trim($v.playlist) != \"\" ? streamServer & '/' & theme & '/' & $v.playlist & '.' & videoExtension : \"\" }])})"
+      "expression": "$map(eventDetails, function($v) { $merge([$v, {'playlist': $exists($v.playlist) and $trim($v.playlist) != \"\" ? streamServer & '/' & theme & '/' & $v.playlist & '.m3u8' : \"\" }])})"
     },
     {
       "op": "jsonata",
@@ -36,30 +37,9 @@
       "path": "/streamServer"
     },
     {
-      "op": "remove",
-      "path": "/theme"
-    },
-    {
-      "op": "remove",
-      "path": "/videoExtension"
-    },
-    {
-      "op": "remove",
-      "path": "/eventDetails/0/markets"
-    },
-    {
-      "op": "remove",
-      "path": "/eventDetails/1/markets"
-    },
-    {
       "op": "jsonata",
       "path": "/eventDetails",
-      "expression": "$map(eventDetails, function($v) { $merge([$v, {'result': $v.result.finalScore ?? \"\"}]) })"
-    },
-    {
-      "op": "jsonata",
-      "path": "/eventDetails",
-      "expression": "$map(eventDetails, function($detail) { $sift($detail, function($v, $k) { $k != 'selections' })})"
+      "expression": "eventDetails ~> | $ | {'result': result.finalScore ?? \"\"}, ['markets', 'selections'] |"
     },
     {
       "op": "jsonata",

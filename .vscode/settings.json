@@ -6,7 +6,8 @@
       "SABASPORTS_OPERATOR_ID": "67d291d943a96fad7f14ddae",
       "SABASPORTS_OPERATOR_PASSWORD": "Nkb3rnoLMEhxUBB8Qahfn",
       "ADMIN_USERNAME": "admin",
-      "ADMIN_PASSWORD": "RFHcKIDw3UK8xfPw9WUpI"
+      "ADMIN_PASSWORD": "RFHcKIDw3UK8xfPw9WUpI",
+      "ENV": "LOCAL"
     },
     "SABASPORTS:2006": {
       "GAME_ID": "2006",
