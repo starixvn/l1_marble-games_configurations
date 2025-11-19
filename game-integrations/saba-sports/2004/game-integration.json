@@ -91,7 +91,7 @@
       {
         "op": "jsonata",
         "path": "/eventDetails",
-        "expression": "$map(eventDetails, function($detail) { $merge([$detail, {'selections': null }])})"
+        "expression": "$map(eventDetails, function($detail) { $sift($detail, function($v, $k) { $k != 'selections' })})"
       }
     ]
   }
