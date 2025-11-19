@@ -1,0 +1,88 @@
+{
+  "markets": [
+    {
+      "name": "SGVG_MARKET_OVER_UNDER",
+      "merge": {},
+      "selections": [
+        {
+          "name": "ft_ou_over",
+          "betChoice": "ft_ou_over"
+        },
+        {
+          "name": "ft_ou_under",
+          "betChoice": "ft_ou_under"
+        }
+      ]
+    },
+    {
+      "name": "SGVG_MARKET_EVEN_ODD",
+      "merge": {},
+      "selections": [
+        {
+          "name": "ft_oe_even",
+          "betChoice": "ft_oe_even"
+        },
+        {
+          "name": "ft_oe_odd",
+          "betChoice": "ft_oe_odd"
+        }
+      ]
+    },
+    {
+      "name": "SGVG_MARKET_1X2",
+      "merge": {
+        "hedgeBetExclusion": ["ft_1x2_draw"]
+      },
+      "selections": [
+        {
+          "name": "ft_1x2_home",
+          "betChoice": "ft_1x2_home"
+        },
+        {
+          "name": "ft_1x2_away",
+          "betChoice": "ft_1x2_away"
+        },
+        {
+          "name": "ft_1x2_draw",
+          "betChoice": "ft_1x2_draw"
+        }
+      ]
+    }
+  ],
+  "mergeEvent": {
+    "_id": null,
+    "__v": null,
+    "operatorGameId": "158",
+    "config": {
+      "delay": {
+        "videoDelayInMs": 6000
+      },
+      "bet": {
+        "delayPlaceBetMs": 0,
+        "soonLockBetMs": 3000
+      }
+    }
+  },
+  "mergeEventDetails": [],
+  "patches": [
+    {
+      "op": "remove",
+      "path": "/theme"
+    },
+    {
+      "op": "jsonata",
+      "path": "/eventDetails",
+      "expression": "eventDetails ~> | $ | {'playlist': 'https://streaming-client.lumigame.com?token=' & $base64encode('game=2004&operator=vgaming')} |"
+    },
+    {
+      "op": "jsonata",
+      "path": "/eventDetails",
+      "expression": "eventDetails ~> | $ | {'result': result.finalScore ?? \"\"}, ['selections', 'goalInfo'] |"
+    },
+    {
+      "op": "jsonata",
+      "path": "/now",
+      "expression": "$now()"
+    }
+  ]
+}
