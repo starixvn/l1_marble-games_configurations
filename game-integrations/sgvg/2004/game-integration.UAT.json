@@ -31,6 +31,7 @@
     {
       "name": "SGVG_MARKET_1X2",
       "merge": {
+        "isMain": true,
         "hedgeBetExclusion": ["ft_1x2_draw"]
       },
       "selections": [

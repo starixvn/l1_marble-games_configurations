@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MarbleTV validator",
+  "type": "object",
+  "properties": {
+    "eventID": {
+      "type": "number"
+    },
+    "eventNameAKey": {
+      "type": "string"
+    },
+    "eventNameBKey": {
+      "type": "string"
+    },
+    "theme": {
+      "type": "string"
+    },
+    "gameId": {
+      "type": "number"
+    },
+    "eventDetails": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "eventID": {
+            "type": "number"
+          },
+          "oddsAvailableTs": {
+            "type": "string"
+          },
+          "scheduleStartTs": {
+            "type": "string"
+          },
+          "resultsAvailableTs": {
+            "type": "string"
+          },
+          "hasResults": {
+            "type": "boolean"
+          },
+          "phase": {
+            "type": "number"
+          },
+          "goalInfo": {
+            "type": "string"
+          },
+          "playlist": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string"
+          },
+          "inGameEventInfo": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "eventID",
+          "oddsAvailableTs",
+          "scheduleStartTs",
+          "resultsAvailableTs",
+          "hasResults",
+          "phase",
+          "goalInfo",
+          "playlist",
+          "result",
+          "inGameEventInfo"
+        ]
+      }
+    },
+    "eventConfig": {
+      "type": "object",
+      "properties": {
+        "preloadDurationMs": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["preloadDurationMs"]
+    },
+    "scheduleStartTs": {
+      "type": "string"
+    },
+    "scheduleEndTs": {
+      "type": "string"
+    },
+    "config": {
+      "type": "object",
+      "properties": {
+        "delay": {
+          "type": "object",
+          "properties": {
+            "eventDetailChangeMs": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["eventDetailChangeMs"]
+        },
+        "voice": {
+          "type": "object",
+          "properties": {
+            "configJson": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["configJson"]
+        },
+        "intro": {
+          "type": "object",
+          "properties": {
+            "prebet": {
+              "type": "string"
+            },
+            "halftime": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["prebet", "halftime"]
+        }
+      },
+      "additionalProperties": false,
+      "required": ["delay", "voice", "intro"]
+    },
+    "now": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "eventID",
+    "eventNameAKey",
+    "eventNameBKey",
+    "theme",
+    "gameId",
+    "eventDetails",
+    "eventConfig",
+    "scheduleStartTs",
+    "scheduleEndTs",
+    "config",
+    "now"
+  ]
+}
