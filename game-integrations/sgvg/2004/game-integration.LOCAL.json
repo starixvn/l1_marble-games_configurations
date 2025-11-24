@@ -6,11 +6,13 @@
       "selections": [
         {
           "name": "ft_ou_over",
-          "betChoice": "ft_ou_over"
+          "betChoice": "ft_ou_over",
+          "group": "side"
         },
         {
           "name": "ft_ou_under",
-          "betChoice": "ft_ou_under"
+          "betChoice": "ft_ou_under",
+          "group": "side"
         }
       ]
     },
@@ -20,32 +22,36 @@
       "selections": [
         {
           "name": "ft_oe_even",
-          "betChoice": "ft_oe_even"
+          "betChoice": "ft_oe_even",
+          "group": "side"
         },
         {
           "name": "ft_oe_odd",
-          "betChoice": "ft_oe_odd"
+          "betChoice": "ft_oe_odd",
+          "group": "side"
         }
       ]
     },
     {
       "name": "SGVG_MARKET_1X2",
       "merge": {
-        "isMain": true,
         "hedgeBetExclusion": ["ft_1x2_draw"]
       },
       "selections": [
         {
           "name": "ft_1x2_home",
-          "betChoice": "ft_1x2_home"
+          "betChoice": "ft_1x2_home",
+          "group": "main"
         },
         {
           "name": "ft_1x2_away",
-          "betChoice": "ft_1x2_away"
+          "betChoice": "ft_1x2_away",
+          "group": "main"
         },
         {
           "name": "ft_1x2_draw",
-          "betChoice": "ft_1x2_draw"
+          "betChoice": "ft_1x2_draw",
+          "group": "side"
         }
       ]
     }
