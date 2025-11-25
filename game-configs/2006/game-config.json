@@ -1,3 +1,72 @@
 {
-  "enabled": true
+  "enabled": true,
+  "teams": [
+    "clb_btc",
+    "clb_cah",
+    "clb_cat",
+    "clb_vie",
+    "clb_hai",
+    "clb_hht",
+    "clb_han",
+    "clb_ndi",
+    "clb_pvc",
+    "clb_sln",
+    "clb_dan",
+    "clb_nin",
+    "clb_tha",
+    "clb_hag"
+  ],
+  "matches": [
+    {
+      "homeTeam": "clb_hai",
+      "awayTeam": "clb_vie",
+      "theme": "vi_lachtray"
+    },
+    {
+      "homeTeam": "clb_sln",
+      "awayTeam": "clb_han",
+      "theme": "vi_vinh"
+    },
+    {
+      "homeTeam": "clb_ndi",
+      "awayTeam": "clb_tha",
+      "theme": "vi_thientruong"
+    },
+    {
+      "homeTeam": "clb_cat",
+      "awayTeam": "clb_pvc",
+      "theme": "vi_thongnhat"
+    },
+    {
+      "homeTeam": "clb_cah",
+      "awayTeam": "clb_nin",
+      "theme": "vi_hangday"
+    },
+    {
+      "homeTeam": "clb_han",
+      "awayTeam": "clb_hai",
+      "theme": "vi_hangday"
+    },
+    {
+      "homeTeam": "clb_cat",
+      "awayTeam": "clb_tha",
+      "theme": "vi_thongnhat"
+    },
+    {
+      "homeTeam": "clb_sln",
+      "awayTeam": "clb_vie",
+      "theme": "vi_vinh"
+    },
+    {
+      "homeTeam": "clb_ndi",
+      "awayTeam": "clb_hht",
+      "theme": "vi_thientruong"
+    },
+    {
+      "homeTeam": "clb_cah",
+      "awayTeam": "clb_dan",
+      "theme": "vi_hangday"
+    }
+  ],
+  "teamSelectionMode": 2
 }
