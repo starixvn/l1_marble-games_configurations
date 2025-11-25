@@ -1,0 +1,90 @@
+{
+  "mergeEvent": {
+    "productCode": "SM_SPINNER_VL",
+    "productTypeKey": "MARBLE",
+    "_id": null,
+    "__v": null,
+    "streamServer": "$STREAM_SERVER",
+    "videoExtension": "mp4"
+  },
+  "mergeEventDetails": [],
+  "patches": [
+    {
+      "op": "jsonata",
+      "path": "/eventDetails/0/playlist",
+      "expression": "$exists(eventDetails[0].playlist) and $trim(eventDetails[0].playlist) != \"\" ? \"REDACTED\" : \"\""
+    },
+    {
+      "op": "jsonata",
+      "path": "/eventDetails/0/goalInfo",
+      "expression": "$exists(eventDetails[0].goalInfo) and $trim(eventDetails[0].goalInfo) != \"\" ? \"REDACTED\" : \"\""
+    },
+    {
+      "op": "jsonata",
+      "path": "/eventDetails/1/playlist",
+      "expression": "$exists(eventDetails[1].playlist) and $trim(eventDetails[1].playlist) != \"\" ? \"REDACTED\" : \"\""
+    },
+    {
+      "op": "jsonata",
+      "path": "/eventDetails/1/goalInfo",
+      "expression": "$exists(eventDetails[1].goalInfo) and $trim(eventDetails[1].goalInfo) != \"\" ? \"REDACTED\" : \"\""
+    },
+    {
+      "op": "remove",
+      "path": "/streamServer"
+    },
+
+    {
+      "op": "remove",
+      "path": "/videoExtension"
+    },
+    {
+      "op": "remove",
+      "path": "/eventDetails/0/selections"
+    },
+    {
+      "op": "remove",
+      "path": "/eventDetails/1/selections"
+    },
+    {
+      "op": "remove",
+      "path": "/gameId"
+    },
+    {
+      "op": "jsonata",
+      "path": "/eventDetails/0/result",
+      "expression": "$exists(eventDetails[0].result) and $exists(eventDetails[0].result.finalScore) ? \"REDACTED\" : \"\""
+    },
+    {
+      "op": "jsonata",
+      "path": "/eventDetails/1/result",
+      "expression": "$exists(eventDetails[1].result) and $exists(eventDetails[1].result.finalScore) ? \"REDACTED\" : \"\""
+    }
+  ],
+  "markets": [
+    {
+      "name": "MARKET_HANDICAP_TEST"
+    },
+    {
+      "name": "MARKET_1H_HANDICAP_TEST"
+    },
+    {
+      "name": "MARKET_OVER_UNDER_TEST"
+    },
+    {
+      "name": "MARKET_1H_OVER_UNDER_TEST"
+    },
+    {
+      "name": "MARKET_EVEN_ODD_TEST"
+    },
+    {
+      "name": "MARKET_1H_EVEN_ODD_TEST"
+    },
+    {
+      "name": "MARKET_1X2_TEST"
+    },
+    {
+      "name": "MARKET_1H_1X2_TEST"
+    }
+  ]
+}
