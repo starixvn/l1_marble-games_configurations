@@ -73,6 +73,10 @@
   "mergeEventDetails": [],
   "patches": [
     {
+      "op": "remove",
+      "path": "/theme"
+    },
+    {
       "op": "jsonata",
       "path": "/eventDetails",
       "expression": "eventDetails ~> | $ | {'playlist': 'https://mgtv.ap.vgaming88.net?token=' & $base64encode('game=2004&operator=vgaming')} |"
@@ -86,10 +90,6 @@
       "op": "jsonata",
       "path": "/now",
       "expression": "$now()"
-    },
-    {
-      "op": "remove",
-      "path": "/theme"
     }
   ]
 }
