@@ -1,7 +1,7 @@
 {
   "mergeEvent": {
     "productCode": "SM_SPINNER_VL",
-    "productTypeKey": "MARBLE",
+    "productTypeKey": "MARBLE_TESTING",
     "_id": null,
     "__v": null,
     "streamServer": "$STREAM_SERVER",
