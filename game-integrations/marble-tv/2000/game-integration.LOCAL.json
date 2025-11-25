@@ -3,12 +3,25 @@
   "mergeEvent": {
     "_id": null,
     "__v": null,
-    "streamServer": "https://d1aof1lwumql9k.cloudfront.net",
-    "videoExtension": "m3u8",
-    "voiceConfig": "https://d1aof1lwumql9k.cloudfront.net/youtube/config_voice.json"
+    "streamServer": "https://d1aof1lwumql9k.cloudfront.net"
   },
   "mergeEventDetails": [],
   "patches": [
+    {
+      "op": "jsonata",
+      "path": "/config/voice/configJson",
+      "expression": "streamServer & '/' & theme & '/config_voice.json'"
+    },
+    {
+      "op": "jsonata",
+      "path": "/config/intro/prebet",
+      "expression": "streamServer & '/' & theme & '/prebet.m3u8'"
+    },
+    {
+      "op": "jsonata",
+      "path": "/config/intro/halftime",
+      "expression": "streamServer & '/' & theme & '/halftime.m3u8'"
+    },
     {
       "op": "jsonata",
       "path": "/eventDetails",
@@ -17,7 +30,7 @@
     {
       "op": "jsonata",
       "path": "/eventDetails",
-      "expression": "$map(eventDetails, function($v) { $merge([$v, {'playlist': $exists($v.playlist) and $trim($v.playlist) != \"\" ? streamServer & '/' & theme & '/' & $v.playlist & '.' & videoExtension : \"\" }])})"
+      "expression": "$map(eventDetails, function($v) { $merge([$v, {'playlist': $exists($v.playlist) and $trim($v.playlist) != \"\" ? streamServer & '/' & theme & '/' & $v.playlist & '.m3u8' : \"\" }])})"
     },
     {
       "op": "jsonata",
@@ -25,48 +38,18 @@
       "expression": "$map(eventDetails, function($v) { $merge([$v, {'goalInfo': $exists($v.goalInfo) and $trim($v.goalInfo) != \"\" ? streamServer & '/' & theme & '/' & $v.goalInfo & '.json' : \"\" }])})"
     },
     {
-      "op": "jsonata",
-      "path": "/eventDetails",
-      "expression": "$map(eventDetails, function($v, $i) { $merge([$v, {'phase': $i }])})"
-    },
-    {
       "op": "remove",
       "path": "/streamServer"
     },
     {
-      "op": "remove",
-      "path": "/theme"
-    },
-    {
-      "op": "remove",
-      "path": "/videoExtension"
-    },
-    {
-      "op": "remove",
-      "path": "/eventDetails/0/markets"
-    },
-    {
-      "op": "remove",
-      "path": "/eventDetails/1/markets"
-    },
-    {
-      "op": "remove",
-      "path": "/gameId"
-    },
-    {
-      "op": "jsonata",
-      "path": "/eventDetails/0/result",
-      "expression": "$exists(eventDetails[0].result) and $exists(eventDetails[0].result.finalScore) ? eventDetails[0].result.finalScore : \"\""
-    },
-    {
-      "op": "jsonata",
-      "path": "/eventDetails/1/result",
-      "expression": "$exists(eventDetails[1].result) and $exists(eventDetails[1].result.finalScore) ? eventDetails[1].result.finalScore : \"\""
-    },
-    {
       "op": "jsonata",
       "path": "/eventDetails",
-      "expression": "$map(eventDetails, function($detail) { $sift($detail, function($v, $k) { $k != 'selections' })})"
+      "expression": "eventDetails ~> | $ | {'result': result.finalScore ?? \"\"}, ['markets', 'selections'] |"
+    },
+    {
+      "op": "jsonata",
+      "path": "/now",
+      "expression": "$now()"
     }
   ]
 }
