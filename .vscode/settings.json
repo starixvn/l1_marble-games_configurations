@@ -11,24 +11,31 @@
     },
     "SABASPORTS:2006": {
       "GAME_ID": "2006",
+      "OPERATOR_NAME": "saba-sports",
       "OPERATOR_ID": "{{$shared SABASPORTS_OPERATOR_ID}}",
       "OPERATOR_PASSWORD": "{{$shared SABASPORTS_OPERATOR_PASSWORD}}",
-      "EVENT_ID": "8615704395896",
-      "OPERATOR_NAME": "saba-sports"
+      "EVENT_ID": "8615704395896"
     },
     "SGVG:2004": {
       "GAME_ID": "2004",
+      "OPERATOR_NAME": "sgvg",
       "OPERATOR_ID": "6875f954cc6dcd65194eee11",
       "OPERATOR_PASSWORD": "sQFb1yiHjGZ3A7TmJNv5J",
-      "EVENT_ID": "8607114513301",
-      "OPERATOR_NAME": "sgvg"
+      "EVENT_ID": "8607114513301"
+    },
+    "MARBLE_TV:2000": {
+      "GAME_ID": "2000",
+      "OPERATOR_NAME": "marble-tv",
+      "OPERATOR_ID": "6891a166944b61adc2694d72",
+      "OPERATOR_PASSWORD": "Ga1kx2LmADHlepAoQiHSV",
+      "EVENT_ID": "8607114513300"
     },
     "MARBLE_TV:2004": {
       "GAME_ID": "2004",
+      "OPERATOR_NAME": "marble-tv",
       "OPERATOR_ID": "6891a166944b61adc2694d72",
       "OPERATOR_PASSWORD": "Ga1kx2LmADHlepAoQiHSV",
-      "EVENT_ID": "8607114513300",
-      "OPERATOR_NAME": "marble-tv"
+      "EVENT_ID": "8607114513300"
     }
   }
 }
