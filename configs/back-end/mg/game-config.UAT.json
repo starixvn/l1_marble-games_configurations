@@ -2,7 +2,7 @@
   "env": "UAT",
   "hostingPort": 3000,
   "database": {
-    "url": "mongodb://marble_backend:MarbleBackend%4022027@10.146.34.28:39520/?authSource=admin&replicaSet=SP-UAT",
+    "url": "mongodb://marble_backend:MarbleBackend%4022027@10.146.34.28:39520/?authSource=admin&replicaSet=SP-UAT&appName=marbles",
     "options": {
       "dbName": "marble_odds_feed"
     }

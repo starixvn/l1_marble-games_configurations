@@ -2,7 +2,7 @@
   "hostingPort": 3000,
   "env": "LOCAL",
   "database": {
-    "url": "mongodb://marble_backend:MarbleBackend@10.10.50.12:39400,10.10.50.13:39400,10.10.50.14:39400/?replicaSet=SPLocal0",
+    "url": "mongodb://marble_backend:MarbleBackend@10.10.50.12:39400,10.10.50.13:39400,10.10.50.14:39400/?replicaSet=SPLocal0&appName=marbles",
     "options": {
       "dbName": "marble_odds_feed"
     }
