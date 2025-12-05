@@ -32,21 +32,13 @@
       "path": "/videoExtension"
     },
     {
-      "op": "remove",
-      "path": "/eventDetails/0/selections"
-    },
-    {
-      "op": "remove",
-      "path": "/eventDetails/1/selections"
-    },
-    {
-      "op": "remove",
-      "path": "/gameId"
-    },
-    {
       "op": "jsonata",
       "path": "/eventDetails",
-      "expression": "$map(eventDetails, function($v) { $merge([$v, {'result': $v.result.finalScore ?? \"\"}]) })"
+      "expression": "eventDetails ~> | $ | {'result': result.finalScore ?? \"\"}, ['selections'] |"
+    },
+    {
+      "op": "remove",
+      "path": "/eventConfig"
     },
     {
       "op": "jsonata",
