@@ -2,7 +2,9 @@
   "markets": [
     {
       "name": "SGVG_MARKET_OVER_UNDER",
-      "merge": {},
+      "merge": {
+        "marketNameKey": "SGVG_MARKET_OVER_UNDER"
+      },
       "selections": [
         {
           "name": "ft_ou_over",
@@ -18,7 +20,9 @@
     },
     {
       "name": "SGVG_MARKET_EVEN_ODD",
-      "merge": {},
+      "merge": {
+        "marketNameKey": "SGVG_MARKET_EVEN_ODD"
+      },
       "selections": [
         {
           "name": "ft_oe_even",
@@ -35,7 +39,8 @@
     {
       "name": "SGVG_MARKET_1X2",
       "merge": {
-        "hedgeBetExclusion": ["draw"]
+        "hedgeBetExclusion": ["draw"],
+        "marketNameKey": "SGVG_MARKET_1X2"
       },
       "selections": [
         {
